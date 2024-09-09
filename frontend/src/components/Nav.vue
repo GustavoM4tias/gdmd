@@ -95,13 +95,17 @@ document.addEventListener('DOMContentLoaded', function () {
   align-items: center;
 }
 
+.nav-link {
+  color: azure !important;
+}
+
 @media (max-width: 728px) {
   .navbar-nav {
     height: 100vh;
   }
 
   .icons {
-    display: block!important;
+    display: block !important;
   }
 
 }

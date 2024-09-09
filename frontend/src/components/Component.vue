@@ -70,6 +70,7 @@ function handleAnimationEnd(event) {
 
 <style scoped>
 .container-fluid {
+    color: azure!important;
     background-image: linear-gradient(to right top, #48138c, #331e81, #202374, #122565, #0d2455, #0b2854, #0d2c52, #123050, #113c5c, #0f4869, #0d5474, #0c617f);
 }
 
@@ -101,7 +102,12 @@ function handleAnimationEnd(event) {
     font-size: 5rem;
     animation: entrada 1.05s ease-in, saida 1.05s ease-out 1.05s;
     animation-fill-mode: both;
+    text-shadow: -15px 15px 40px rgba(11, 90, 194, .4), 15px -15px 40px rgba(108, 21, 221, .4);
 }
+
+
+
+
 
 .animate-slide-in {
     animation: entrada 1.05s ease-in forwards;
