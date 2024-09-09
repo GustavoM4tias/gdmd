@@ -6,7 +6,7 @@ import Caracteristicas from '../components/Caracteristicas.vue'
 <template>
 
     <Component class="vh-100" />
-    <Caracteristicas class="vh-100"/>
+    <Caracteristicas />
 
 </template>
 

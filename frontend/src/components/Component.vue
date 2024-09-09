@@ -45,12 +45,15 @@ function handleAnimationEnd(event) {
 
             <div class="col-12 col-md-6 d-flex justify-content-start align-items-center ps-5">
                 <div class="text">
-                    <p class="texto w-75 fs-3">Soluções para seu negócio com:</p>
+                    <p class="texto w-75">Soluções para seu negócio com:</p>
                     <p class="texto-animado fw-bold"
                         :class="{ 'animate-slide-in': animEntrada, 'animate-slide-out': animSaida }"
                         @animationend="handleAnimationEnd">
                         {{ frase }}
                     </p>
+                </div>
+                <div class="seta position-absolute">
+                    <i class="fa-solid fa-chevron-down fa-bounce"></i>
                 </div>
             </div>
 
@@ -70,7 +73,7 @@ function handleAnimationEnd(event) {
 
 <style scoped>
 .container-fluid {
-    color: azure!important;
+    color: azure !important;
     background-image: linear-gradient(to right top, #48138c, #331e81, #202374, #122565, #0d2455, #0b2854, #0d2c52, #123050, #113c5c, #0f4869, #0d5474, #0c617f);
 }
 
@@ -99,15 +102,11 @@ function handleAnimationEnd(event) {
 }
 
 .texto-animado {
-    font-size: 5rem;
+    font-size: 4rem;
     animation: entrada 1.05s ease-in, saida 1.05s ease-out 1.05s;
     animation-fill-mode: both;
     text-shadow: -15px 15px 40px rgba(11, 90, 194, .4), 15px -15px 40px rgba(108, 21, 221, .4);
 }
-
-
-
-
 
 .animate-slide-in {
     animation: entrada 1.05s ease-in forwards;
@@ -118,7 +117,7 @@ function handleAnimationEnd(event) {
 }
 
 .text {
-    margin-left: 100px;
+    margin-left: 5rem;
 }
 
 .layer {
@@ -130,14 +129,16 @@ function handleAnimationEnd(event) {
 }
 
 .phone-1 {
-    margin-left: 20px;
-    margin-top: 120px;
+    width: 30vw;
+    margin-left: 1rem;
+    margin-top: 6rem;
     filter: drop-shadow(-30px 30px 80px rgba(11, 90, 194, .4));
 }
 
 .phone-2 {
-    margin-left: 350px;
-    margin-top: 50px;
+    width: 30vw;
+    margin-left: 13rem;
+    margin-top: 3em;
     transform: rotate(45deg);
     filter: drop-shadow(30px -30px 80px rgba(108, 21, 221, .4));
 }
@@ -149,6 +150,16 @@ function handleAnimationEnd(event) {
 .phone-2 {
     animation: bounce 5s infinite;
 }
+
+.seta {
+    bottom: 10px;
+    left: 25%;
+}
+
+.fa-bounce {
+    animation-duration: 2s;
+}
+
 
 @keyframes bounce {
 
@@ -169,6 +180,9 @@ function handleAnimationEnd(event) {
     }
 }
 
+
+
+
 @media (max-width: 728px) {
 
     .img {
@@ -186,14 +200,23 @@ function handleAnimationEnd(event) {
     .phone-1 {
         width: 400px;
         margin-left: 15px;
-        margin-top: 0px;
+        /* margin-top: 0px; */
+        margin-top: -200px;
     }
 
     .phone-2 {
+        /* 
         width: 450px;
         margin-left: 15px;
-        margin-top: 500px;
+        margin-top: 500px; */
+        display: none
     }
+
+    .seta {
+        bottom: 10px;
+        left: 45%;
+    }
+
 
 }
 </style>
