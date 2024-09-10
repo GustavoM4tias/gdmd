@@ -137,7 +137,7 @@ function handleAnimationEnd(event) {
 
 .phone-2 {
     width: 30vw;
-    margin-left: 13rem;
+    margin-left: 17vw;
     margin-top: 3em;
     transform: rotate(45deg);
     filter: drop-shadow(30px -30px 80px rgba(108, 21, 221, .4));
