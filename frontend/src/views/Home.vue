@@ -1,14 +1,18 @@
 <script setup>
-import Component from '../components/Component.vue'
+import Nav from '../components/Nav.vue'
+import Home from '../components/Home.vue'
 import Caracteristicas from '../components/Caracteristicas.vue'
-import Teste from '../components/Teste.vue'
+import Metodologia from '../components/Metodologia.vue'
+import Paginas from '../components/Paginas.vue'
 </script>
 
 <template>
 
-    <Component class="vh-100" />
+    <Nav />
+    <Home />
     <Caracteristicas />
-    <Teste />
+    <Metodologia />
+    <Paginas />
 
 </template>
 

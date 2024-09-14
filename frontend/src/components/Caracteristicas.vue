@@ -1,97 +1,70 @@
 <script setup>
+import { ref } from 'vue';
+
+const cards = ref([
+    {
+        icon: "fa-solid fa-mobile-screen",
+        title: "Site Responsivo",
+        text: "Seu site preparado para dispositivos móveis."
+    },
+    {
+        icon: "fa-solid fa-chart-column",
+        title: "Otimização e SEO",
+        text: "Otimização do seu site para ranquear melhor nas buscas."
+    },
+    {
+        icon: "fa-solid fa-gears",
+        title: "Site gerenciável",
+        text: "Edite e altere o conteúdo do seu site através do painel."
+    },
+    {
+        icon: "fa-regular fa-window-restore",
+        title: "Cross-browser",
+        text: "Seu site com funcionalidade em qualquer navegador."
+    },
+    {
+        icon: "fa-regular fa-file-zipper",
+        title: "Exclusividade",
+        text: "Design, key visual e programação exclusivos."
+    },
+    {
+        icon: "fa-solid fa-user-check",
+        title: "User Interface",
+        text: "Design de interface amigável e fácil de navegar."
+    },
+    {
+        icon: "fa-solid fa-computer-mouse",
+        title: "User Experience",
+        text: "Técnicas e interações focados na experiência usuário."
+    },
+    {
+        icon: "fa-regular fa-newspaper",
+        title: "Blog",
+        text: "Sistema de blog e notícias para sua empresa converter."
+    }
+]);
 </script>
 
 <template>
-    <div class="container-fluid">
-
+    <div id="caracteristicas" class="container-fluid">
         <div class="container">
             <div class="textos d-flex py-5">
                 <div class="titulo col-12 col-sm-6">
                     <h5 class="fw-bold me-5">Principais características de um projeto de desenvolvimento de site:</h5>
                 </div>
                 <div class="col-12 col-sm-6">
-                    <p class="sub-texto me-4"><strong>Criação de sites profissionais</strong> exclusivos, adaptados para uma gama de dispositivos e planejados
+                    <p class="sub-texto me-4"><strong>Criação de sites profissionais</strong> exclusivos, adaptados para
+                        uma gama de dispositivos e planejados
                         para sua empresa conquistar ótimos resultados.</p>
                 </div>
-
             </div>
             <div class="row g-4 pb-5">
-                <div class="col-6 col-sm-3">
+                <div v-for="card in cards" :key="card.title" class="col-6 col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <i class="fa-solid fa-mobile-screen mb-3"></i>
-                            <h6 class="card-title mt-2">Site Responsivo</h6>
-                            <p class="card-text">Seu site preparado para dispositivos móveis. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-solid fa-chart-column mb-3"></i>
-                            <h6 class="card-title mt-2">Otimização e SEO</h6>
-                            <p class="card-text">Otimização do seu site para ranquear melhor nas buscas. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-solid fa-gears mb-3"></i>
-                            <h6 class="card-title mt-2">Site gerenciável</h6>
-                            <p class="card-text">Edite e altere o conteúdo do seu site através do painel. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-regular fa-window-restore mb-3"></i>
-                            <h6 class="card-title mt-2">Cross-browser</h6>
-                            <p class="card-text">Seu site com funcionalidade em qualquer navegador. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-regular fa-file-zipper mb-3"></i>
-                            <h6 class="card-title mt-2">Exclusividade</h6>
-                            <p class="card-text">Design, key visual e programação exclusivos. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-solid fa-user-check mb-3"></i>
-                            <h6 class="card-title mt-2">User Interface (UI)</h6>
-                            <p class="card-text">Design de interface amigável e fácil de navegar. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-solid fa-computer-mouse mb-3"></i>
-                            <h6 class="card-title mt-2">User Experience (UX)</h6>
-                            <p class="card-text">Técnicas e interações focados na experiência usuário. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fa-regular fa-newspaper mb-3"></i>
-                            <h6 class="card-title mt-2">Blog</h6>
-                            <p class="card-text">Sistema de blog e notícias para sua empresa converter. </p>
+                            <i :class="card.icon" class="mb-3"></i>
+                            <h6 class="card-title mt-2">{{ card.title }}</h6>
+                            <p class="card-text">{{ card.text }}</p>
                         </div>
                     </div>
                 </div>
@@ -110,14 +83,14 @@
 }
 
 .sub-texto,
-.sub-texto > strong {
+.sub-texto>strong {
     font-size: .8rem;
     color: rgb(85, 85, 85);
 }
 
 .card {
     border: none;
-    height: 30vh;
+    height: 25vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: .3s;
 }
@@ -133,8 +106,12 @@
     color: #007bff;
 }
 
-.card i:hover  {
+.card i:hover {
     color: #006adb;
+}
+
+.card-title {
+    font-size: 1rem;
 }
 
 .card-text {
@@ -150,6 +127,14 @@
         margin-top: 10px;
     }
 
+
+    .card-title {
+        font-size: .9rem;
+    }
+
+    .card-text {
+        font-size: .8rem;
+    }
 
 }
 </style>

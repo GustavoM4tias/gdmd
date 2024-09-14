@@ -32,7 +32,7 @@ onMounted(() => {
     alteraFrase();
 });
 
-function handleAnimationEnd(event) {
+function animacaoSaida(event) {
     if (event.animationName === 'saida') {
         animEntrada.value = false;
     }
@@ -48,13 +48,13 @@ function handleAnimationEnd(event) {
                     <p class="texto w-75">Soluções para seu negócio com:</p>
                     <p class="texto-animado fw-bold"
                         :class="{ 'animate-slide-in': animEntrada, 'animate-slide-out': animSaida }"
-                        @animationend="handleAnimationEnd">
+                        @animationend="animacaoSaida">
                         {{ frase }}
                     </p>
                 </div>
-                <div class="seta position-absolute">
-                    <i class="fa-solid fa-chevron-down fa-bounce"></i>
-                </div>
+                <a class="seta text-light position-absolute" href="#caracteristicas">
+                    <i class="fa-solid fa-chevron-down fa-bounce" ></i>
+                </a>
             </div>
 
 
@@ -73,6 +73,7 @@ function handleAnimationEnd(event) {
 
 <style scoped>
 .container-fluid {
+    height: 100vh;
     color: azure !important;
     background-image: linear-gradient(to right top, #48138c, #331e81, #202374, #122565, #0d2455, #0b2854, #0d2c52, #123050, #113c5c, #0f4869, #0d5474, #0c617f);
 }
