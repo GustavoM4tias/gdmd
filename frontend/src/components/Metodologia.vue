@@ -1,143 +1,144 @@
-<template>
-  <div class="metodologia">
-    <h1 class="text-center mb-5">Nossa Metodologia</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="metodologia-steps">
-            <div class="step" v-for="(step, index) in steps" :key="index" :style="{ animationDelay: `${index * 500}ms` }">
-              <div class="step-icon">
-                <i :class="step.icon" class="fas fa-lg"></i>
-              </div>
-              <div class="step-content">
-                <h2>{{ step.title }}</h2>
-                <p>{{ step.description }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
+<script setup>
 import { ref } from 'vue';
 
-export default {
-  setup() {
-    const steps = ref([
-      {
-        title: "Descoberta",
-        description: "Entendemos suas necessidades",
-        icon: "fa-lightbulb"
-      },
-      {
-        title: "Planejamento",
-        description: "Criamos um plano personalizado",
-        icon: "fa-calendar-alt"
-      },
-      {
+const methods = ref([
+    {
+        number: "01",
+        title: "Briefing",
+        description: "Imersão ao negócio<br>Benchmarking<br>Briefing<br>Definição de objetivos<br>Estudo de possibilidades",
+        icon: "fas fa-briefcase"
+    },
+    {
+        number: "02",
+        title: "Arquitetura",
+        description: "Sitemap<br>Mídias e tipos de conteúdo<br>Funcionalidade das páginas<br>Estruturação de conteúdo<br>Definição de materiais",
+        icon: "fas fa-project-diagram"
+    },
+    {
+        number: "03",
         title: "Design",
-        description: "Criamos um design visual",
-        icon: "fa-palette"
-      },
-      {
-        title: "Desenvolvimento",
-        description: "Construímos o site",
-        icon: "fa-code"
-      },
-      {
-        title: "Testes e Depuração",
-        description: "Realizamos testes rigorosos",
-        icon: "fa-bug"
-      },
-      {
-        title: "Lançamento",
-        description: "Lançamos o site",
-        icon: "fa-rocket"
-      },
-      {
-        title: "Manutenção e Suporte",
-        description: "Oferecemos suporte contínuo",
-        icon: "fa-wrench"
-      }
-    ]);
-
-    return {
-      steps
-    };
-  }
-}
+        description: "Wireframe<br>Keyvisual<br>User Interface<br>Protótipo<br>Layout",
+        icon: "fas fa-paint-brush"
+    },
+    {
+        number: "04",
+        title: "Front-End",
+        description: "Programação e codificação<br>Estruturação de páginas<br>Funcionalidades<br>Responsividade<br>CMS WordPress",
+        icon: "fas fa-code"
+    },
+    {
+        number: "05",
+        title: "Homologação",
+        description: "Revisão e testes<br>Integrações<br>Otimização SEO<br>Validação de conteúdo<br>Testes de performance",
+        icon: "fas fa-check-circle"
+    },
+    {
+        number: "06",
+        title: "Entrega",
+        description: "Entrega do projeto<br>Treinamento<br>Suporte inicial<br>Feedback<br>Documentação",
+        icon: "fas fa-truck"
+    }
+]);
 </script>
 
+<template>
+    <div class="container-fluid">
+        <div class="container text-center py-5">
+            <div class="row">
+                <div class="col-12 pb-4">
+                    <h1 class="titulo">Metodologia</h1>
+                    <p class="subtitulo">Veja o que engloba nossa metodologia e entenda como funciona o nosso
+                        processo de <span class="highlight">desenvolvimento de sites</span>.</p>
+                    <a class="highlight orcamento text-decoration-none">Faça um orçamento</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 passos">
+                    <div v-for="metodo in methods" :key="metodo.title" class="step">
+                        <div class="passos-icone">
+                            <i :class="metodo.icon" class="fa-lg" style="color: #4682b4;"></i>
+                        </div>
+                        <p class="passos-numero">{{ metodo.number }}</p>
+                        <h2 class="passos-titulo">{{ metodo.title }}</h2>
+                        <p class="passos-descricao" v-html="metodo.description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
 <style scoped>
-.metodologia {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container-fluid {
+    background-color: #0a0f1e;
+    color: #4682b4;
 }
 
-.metodologia-steps {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+.titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 1rem;
+    color: #b0b0b0;
+}
+
+.highlight {
+    color: #4682b4;
 }
 
 .step {
-  margin: 20px;
-  width: calc(100% / 7);
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  animation: slideInFromRight 2s ease-in-out;
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    flex: 1;
 }
 
-.step-icon {
-  text-align: center;
-  margin-bottom: 10px;
+.passos-icone {
+    background-color: #1a1f2e;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.step-icon i {
-  color: #007bff;
-  font-size: 24px;
+.passos-numero {
+    font-size: 1rem;
+    color: #b0b0b0;
 }
 
-.step-content {
-  text-align: center;
+.passos-titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.step-content h2 {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 5px;
+.passos-descricao {
+    font-size: 0.9rem;
+    color: #b0b0b0;
 }
 
-.step-content p {
-  font-size: 14px;
-  color: #666;
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Add media query for mobile devices */
-@media only screen and (max-width: 768px) {
-  .metodologia-steps {
+.passos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
-  }
-  .step {
-    width: 100%;
-  }
+}
+
+.orcamento:hover {
+    cursor: pointer;
+    color: #50a3e7;
+}
+
+@media (max-width: 768px) {
+    .step {
+        flex: 0 0 48%;
+        margin-bottom: 2rem;
+    }
 }
 </style>
