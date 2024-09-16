@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#home">Início</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#portfolio">Portfólio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#orcamento">Orçamentos</a>
         </li>
         <li class="nav-item icons d-none">
           <i class="fa-brands fa-instagram px-2"></i>

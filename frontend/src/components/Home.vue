@@ -40,7 +40,7 @@ function animacaoSaida(event) {
 </script>
 
 <template>
-    <div class="container-fluid vh-100">
+    <div class="container-fluid vh-100" id="home">
         <div class="row h-100">
 
             <div class="col-12 col-md-6 d-flex justify-content-start align-items-center ps-5">
